@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	function sum(){
+	//	console.dir(this);
+		return this.x + this.y;
+	}
+	var obj = {userName:"홍길동",
+					getUserName:function(){
+						var result;
+						result = "결과"+this.userName;
+						return result;
+					}
+				};
+	var obj1 = {userName:"임꺽정",
+					getUserName:null};
+	var obj2 = {x:1,y:3,
+					sumfunc:function(){
+						return sum.apply(this);
+					}};
+//	console.log(obj2.sumFunc());
+//	obj1.getUserName = obj.getUserName;
+//	console.log(obj1.getUserName.apply(obj));
+	var num = new Number(1234);
+	console.dir(num);
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

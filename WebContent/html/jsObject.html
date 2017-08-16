@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS Object</title>
+<script>
+	function add(x, y) {
+		return x+y;
+	}
+	
+	var gVar=1;
+//	console.log(outerFunc.version);
+	function outerFunc(){
+		var oVar=2;
+		innerfunc();
+		function innerFunc(){
+			console.dir(innerFunc);
+		 	var iVar=3;
+	}
+}
+outerFunc.version=1.5;
+outerFunc.sayHello = function(){
+
+	console.log(this.version);
+}
+outerFunc.sayHello();
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

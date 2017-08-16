@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+(function(){
+	//선언식
+	function add(x, y){
+		return x+y;
+	}
+	//표현식
+	var plus = function(x, y){
+		return x+y;
+	};
+	
+	function Car(wheelCnt, manufacturer, speed){
+		var maxSpeed = 200;
+		var counter = 0;
+		var engine =  100;
+		this.wheelCnt = wheelCnt;
+		this.manufacturer = manufacturer;
+		this.speed = speed;
+		this.init = function(){
+			cleanEngine.apply(this);
+		};
+		this.speedUp = function(){
+			//var innerCounter = 0;
+			//console.log(++counter);
+			if ( this.speed >= maxSpeed ){
+				console.log("최대 스피드 초과");
+				return;
+			}
+			this.speed++;
+		}
+//		this.speedDown = function(){
+//			this.speed--;
+//		}
+		function cleanEngine(){
+			engine = 0;
+			this.speed = 0;
+		}
+		this.getEngine = function(){
+			return engine;
+		}
+	}
+	Car.prototype.speedDown = function(){
+		this.speed--;
+	}
+	
+	function person(pName, pAge){
+		var userName = pName;
+		var age = pAge;
+		
+		function setUserName(name){
+			userName = name;
+		}
+		function getUserName(name){
+			return userName;
+		}
+		return {setUserName : setUserName, getUserName : getUserName};
+	}
+	var person1 = person("홍길동", 500);
+	var person2 = person("임꺽정", 487);
+	var person3 = person("변사또", 1234);
+	
+	console.log(person1.getUserName(""));
+	console.log(person2.getUserName(""));
+	console.log(person3.getUserName(""));
+	
+	//리턴해서 프로퍼티를 만들어준걸로
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

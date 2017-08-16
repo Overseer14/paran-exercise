@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Primitive Data Types</title>
+<script>
+
+/*  IIFE(Immediately Invoked Function Expressions: “Iffy”라고 발음)
+ 	*  은 즉시 호출 함수 표현식의 줄임말.
+	*	Anonym
+	ous Function(Local)로 실행함.
+ */
+(function () {
+	var primitiveVar1 = "John";
+	var primitiveVar2 = "3.14";
+	var obj = {name:"홍길동"};
+	var refObj = obj;
+	var dt = new Date();
+//	console.log(dt.getday());
+	refObj.age = 15;
+	var hostName;
+	console.log(hostName);
+	console.log(refObj.score);
+//	console.dir(obj);
+//	console.dir(refObj);
+//	console.log(refVar1.toString());
+//	console.log(primitiveVar1.toString());
+//	console.log(primitiveVar2.toString());
+	
+//	console.log(typeof "John");
+//	console.log(typeof 3.14);
+//	console.log(typeof true);
+//	console.log(typeof null);
+//	console.log(typeof undefined);
+})(1);
+</script>
+</head>
+<body>
+		<ul>
+			<li>string</li>
+			<li>number</li>
+			<li>boolean</li>
+			<li>null</li>
+			<li>undefined</li>
+		</ul>
+</body>
+</html>

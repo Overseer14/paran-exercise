@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css position attribute</title>
+<style>
+body {
+	 	font-family: Verdana, sans-serif;
+	 	font-size:0.9em;
+	}
+header, footer {
+		padding:10px;
+		color:white;
+		background-color:black;
+	}
+section {
+		margin: 5px;
+		padding: 10px;
+		background-color:lightgrey;
+}
+article {
+		margin: 5px;
+		padding: 10px;  
+		background-color: white;
+		position: relative;
+}
+section > article > div.positionRelative{
+	border:1px dotted green;
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: relative;
+	left: 10px;
+}
+section > article > div.positionAbsolute{
+	border:1px solid red;
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+section > article > div.positionFixed{
+	border:1px solid red;
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: fixed;
+	left: 50px;
+	top: 50px;
+}
+
+section > article > div.positionR{
+	background-color: red;
+	border:1px solid red;
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: relative;
+	left: 0px;
+	z-index: 8;
+}
+section > article > div.positionG{
+	background-color: green;
+	border:1px solid green;
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	z-index: 3;
+}
+section > article > div.positionB{
+	background-color: blue;
+	border:1px solid blue;
+	width: 100px;
+	height: 100px;
+	display: block;
+	position: fixed;
+	left: 120px;
+	top: 370px;
+	z-index: 0;
+}
+</style>
+</head>
+<body>
+		<header>
+			<h2>css position attribute</h2>
+		</header>
+		<section>
+			<article>
+				<div class="positionRelative">relative</div>
+				<div class="positionAbsolute">absolute</div>
+				<div class="positionFixed">fixed</div>
+			</article>
+		</section>
+		<section>
+			<article>
+				<div class="positionR">R</div>
+				<div class="positionG">G</div>
+				<div class="positionB">B</div>
+				<p>21354125125125125</p>
+			</article>
+		</section>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Div Layout</title>
+<style>
+body {
+        text-align: center;
+        width: 900px;
+}
+div#wapper {
+        width: 100%;
+        text-align: left;
+		height: 300px;
+        margin: 0 auto;
+}
+header, footer, nav, aside, section {
+       	border: 1px solid #993333;
+        margin: 5px;
+        padding: 10px;
+}
+header {
+        height: 80px;
+}
+nav, section, aside {
+        float: left;
+        height: 200px;
+}
+nav {
+        width: 100px;
+}
+section {
+        width: 604px;
+}
+aside {
+        width: 100px;
+}
+footer {
+        height: 50px;
+        position: relatiev;
+        clear: both;
+}
+article {
+        width: 90%;
+}
+</style>
+</head>
+<body>
+	<div id="wapper">
+        <!--헤더-->
+        <header>
+            <h2>무제 사이트</h2>
+        </header>
+        <!--왼쪽사이드바-->
+		<nav>
+            <h4>왼쪽사이드바</h4>
+            <ul>
+                <li><a href="">항목1</a></li>
+                <li><a href="">항목2</a></li>
+                <li><a href="">항목3</a></li>
+                <li><a href="">항목4</a></li>
+            </ul>
+		</nav>
+        <!--콘텐츠-->
+        <section>
+            <h3>본문</h3>
+            <article>
+                <p>3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535
+                3523523523532535</p>
+            </article>
+        </section>
+        <!--오른쪽사이드바-->
+        <aside>
+            <h4>오른쪽사이드</h4>
+             <ul>
+                <li><a href="">항목1</a></li>
+                <li><a href="">항목2</a></li>
+                <li><a href="">항목3</a></li>
+                <li><a href="">항목4</a></li>
+            </ul>
+        </aside>
+        <!--풋터-->
+        <footer>저작권</footer>
+    </div>
+</body>
+</html>

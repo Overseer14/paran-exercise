@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Validation Test</title>
+</head>
+<body>
+<script>
+	function dataValidation2() {
+    var form = document.getElementById("FormTest");
+    
+    for(var i=0, i<form.length, i++){
+		if ( form[i].data.validation == "y" ){
+			dataValidation(i);
+			}
+    	}
+	}
+	function dataValidation(i) {
+		var form = document.getElementById("FormTest");
+		
+		if( form.elements[0].values=""){
+			alert("이름을 입력해주세요");
+			form.element=[0].focus();
+		}
+		if( !form.elements[1].checked){
+			alert("내국인, 외국인 선택해주세요");
+			form.element=[1].focus();
+		}
+	}
+	event.preventDefault();
+}
+	
+</script>
+	<form>
+		<span>First name:</span>
+	<input type="text" name="firstname" placeholder="예) 홍" required><br>
+		<span>Last name:</span>
+	<input type="text" name="lastname" placeholder="예) 길동" required><br><br>
+	<input type="radio" name="countryTp" value="native">내국인
+	<input type="radio" name="countryTp" value="foreigner">외국인<br>
+		<span>좋아하는 색: </span><input type="color" id="favoriteColor" value="#ff0000"><br><br>
+	<input type="submit" value="Submit">
+	<input type="submit" onclick="validate();" value="유효성체크">
+	</form> 
+</body>
+</html>

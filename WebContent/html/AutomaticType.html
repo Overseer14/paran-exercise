@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Automatic Types</title>
+<script>
+
+(function(){
+	var v1 = "ab", v2, v3=null, v4=1;
+	var obj1={},obj2={};
+	console.log("5"+2);
+	console.log(5+"2");
+	console.log(v1+v2);
+	console.log(v1+v3);
+	console.log(v4+v3);
+	console.log(v4+v2);
+	console.log("5"*"2");
+	console.log(obj1*obj2);
+	console.log(v2*v2);
+	console.log(null*null);
+	if ( "0" && 1 ){
+		console.log("true");
+	}
+	console.log(parseInt("33th"));
+	console.log(Number("33th"));
+})();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+p{
+	font-size:1em;
+}
+
+p.small {
+	font-size:2em;
+}
+
+p.medium {
+	font-size:3em;
+}
+
+p.large {
+	font-size:4em;
+}
+section article {
+	border:1px solid #0000ff;
+	margin: 1em 1em;
+}
+section#firstSection article{
+	text-align: center;
+	border-radius: 25px;
+	background-color: grey;
+}
+
+section#secondSection article{
+	text-align: justify;
+	border-radius: 25px;
+	background-color: hotpink;
+}
+section table.userTable{
+	width:100%;
+	background-image:url('펭귄.jpg');
+}
+section table.userTable, section table.userTable th, section table.userTable.td{
+	border: 1px solid black;
+}
+section table.userTable > thead > tr > th{
+	width:25%;
+}
+
+
+section table.userTable > tbody > tr > td.numberType{
+	text-align: right;
+	color: hotpink;
+}
+section table.userTable > tbody > tr > td.charType{
+	text-align: center;
+	color: rgb(255,255,255 );
+}
+div{
+	background-color: #ff0000;
+	width: 100px;
+	height: 100px;
+}
+div.hasBox{
+	border:2px solid #000000;
+	padding: 10px;
+	magin: 10px;
+}
+section{
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+		<header><h1>css attribute</h1></header>
+		<section>
+			<div>div</div>
+			<div class="hasBox">div box model</div>
+		</section>
+		<section id="firstSection">
+		<article>
+			<p>p tag attribute1</p>
+			<p>p tag attribute2</p>
+		</article>
+		<article>
+			<p class=small> p.small </p>
+			<p class=medium> p.medium </p>
+			<p class=large> p.large </p>
+		</article>
+		</section>
+		<section id="secondSection">
+		<article>
+			<p>p tag attribute1</p>
+			<p>p tag attribute2</p>
+		</article>
+		<article>
+			<p class=small> p.small </p>
+			<p class=medium> p.medium </p>
+			<p class=large> p.large </p>
+		</article>
+		</section>
+		<section>
+			<h2>※급여 테이블</h2>
+			<table class="userTable">
+				<thead>
+						<tr>
+							<th>사원명</th>
+							<th>사원No.</th>
+							<th>직급</th>
+							<th>기본급</th>
+						</tr>
+				</thead>
+				<tbody>
+						<tr>
+							<th>홍길동</th>
+							<th class="charType">201509001</th>
+							<th class="charType">대리</th>
+							<th class="numberType">1,500,000</th>
+						</tr>
+						<tr>
+							<th>임꺽정</th>
+							<th>201509002</th>
+							<th>대리</th>
+							<th>1,300,000</th>
+						</tr>
+						<tr>
+							<th>변사또</th>
+							<th>201509003</th>
+							<th>사원</th>
+							<th>1,200,000</th>
+						</tr>
+				</tbody>
+			</table>
+		</section>
+</body>
+</html>

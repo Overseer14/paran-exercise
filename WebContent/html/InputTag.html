@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function doSumit() {
+	var name = document.getElementById("name");
+	if (name.value != "michael") {
+		event.preventDefault();
+	}
+}
+function validateform(){
+	var countryTp = document.getElementsByName("countryTp");
+	var favoriteColor = document.getElementsByName("favoriteColor");
+	console.dir(favoriteColor);
+	var isChecked = false;
+	for(var i=0, icountryTp.length, i++){
+		if ( countryTp[i].checked ){
+			isChecked = !isChecked;
+		}
+	}
+	if ( !isChecked ){
+		alert("내/외국인 구분을 선택하세요");
+		countryTp[0].focus();
+	}
+}
+</script>
+	
+	<form action="/action_page.php">
+		First name:<br>
+	<input type="text" name="firstname" placeholder="예) 홍" required><br>
+		Last name:<br>
+	<input type="text" name="lastname" placeholder="예) 길동" required><br><br>
+	<input type="radio" name="countryTp" value="native">내국인
+	<input type="radio" name="countryTp" value="foreigner">외국인<br>
+	좋아하는 색: <input type="color" id="favoriteColor" value="#ff0000"><br><br>
+	<input type="submit" value="Submit">
+	<input type="submit" onclick="validate();" value="유효성체크">
+	</form> 
+</body>
+</html>
