@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Demo</title>
+</head>
+<script>
+var SelectBoxes = function(selectArr) {
+var idArr = selectArr;
+var dataArr = [];
+var selectObj = null;
+var jsonObj = {
+        "area" : [
+	          {"id" : "1000" , "pid" : "0000" , "name" : "전라남도"},
+	          {"id" : "2000" , "pid" : "0000" , "name" : "전라북도"},
+	          {"id" : "3000" , "pid" : "0000" , "name" : "경상남도"},
+	          
+	          {"id" : "1100" , "pid" : "1000" , "name" : "목포시"},
+	          {"id" : "1200" , "pid" : "1000" , "name" : "여수시"},
+	          {"id" : "1300" , "pid" : "1000" , "name" : "순천시"},
+	          
+	          {"id" : "2100" , "pid" : "2000" , "name" : "전주시"},
+	          {"id" : "2200" , "pid" : "2000" , "name" : "익산시"},
+	          
+	          {"id" : "3100" , "pid" : "3000" , "name" : "창원시"},
+	          {"id" : "3200" , "pid" : "3000" , "name" : "김해시"},
+	          
+	          {"id" : "1110" , "pid" : "1100" , "name" : "용당1동"},
+	          {"id" : "1120" , "pid" : "1100" , "name" : "용당2동"},
+	          {"id" : "1210" , "pid" : "1200" , "name" : "돌산읍"},
+	          
+	          {"id" : "1111" , "pid" : "1110" , "name" : "용당동"},
+	          {"id" : "1121" , "pid" : "1120" , "name" : "용당동 일부"},
+	          
+	          {"id" : "3110" , "pid" : "3100" , "name" : "의창구"},
+	          {"id" : "3120" , "pid" : "3100" , "name" : "성산구"},
+	          
+	          {"id" : "3111" , "pid" : "3110" , "name" : "동읍"}
+	          ]
+     };
+		console.dir(jsonObj);
+	
+	this.initData = function() {
+		dataArr = jsonObj['area'];
+			console.log(dataArr);
+			var selectPid = "0000"; // 첫번째 셀렉트박스 세팅
+			
+			for(i = 0;i<idArr.length; i++) {
+				var sTemp = document.getElementById(idArr[i]);
+				setFirstOptionWithWords(sTemp);
+			}
+			selectObj = document.getElementById(idArr[0]);
+			var child = countChild(selectPid);
+			setChild(selectObj, child);
+			
+			for(i=0;i<idArr.length-1;i++) {
+				selectObj = document.getElementById(idArr[i]);
+				
+				// 온체인지 이벤트
+				selectObj.onchange = function(){
+					var nextChild = findPosition(this.id);
+					for(j = 0; j<dataArr.length; j++) {
+						if(dataArr[j].id==this.value) {
+							var pid = dataArr[j].id;
+						}
+					}
+					child = countChild(pid);
+					resetChild(this.id);
+					setChild(nextChild, child);
+			}
+		}		
+	}
+	
+	
+	// 위치 찾기
+	function findPosition(id) {
+		for(i = 0; i<idArr.length-1; i++) {
+			if(idArr[i]==id) {
+				return document.getElementById(idArr[i+1]);
+			}	
+		}
+	}
+	
+	// 자식을 확인
+	function countChild(pid) {
+		var child = [];
+		for(i=0;i<dataArr.length; i++) {
+			if(dataArr[i].pid==pid) {
+				child.push(dataArr[i]);
+			}
+		}
+		return child;
+	}
+	
+	// 자식에다 옵션 넣기
+	function setChild(select, child) {
+		for(i = 0; i<child.length; i++) {
+			var obj = document.createElement('option');
+			obj.value = child[i].id;
+			obj.text = child[i].name;
+			select.add(obj);
+		}
+	}
+	
+	// 자식 선택 초기화
+	function resetChild(id) {
+		var cCnt=0;
+		var select;
+		for(i = 0; i<idArr.length; i++) {
+			if(idArr[i]==id) {
+				cCnt = i;
+			}
+		}
+		
+		for(i=(cCnt+1);i<idArr.length;i++) {
+			select = document.getElementById(idArr[i]);
+			select.length = 1;
+		}		
+	}
+	//-선택으로 초기화-
+	function setFirstOptionWithWords(select) {
+		var obj = document.createElement('option');
+		obj.value = "";
+		obj.text = "-선택-";
+		select.add(obj);
+		}
+	}
+	
+	window.onload = function() {
+		var selectId = ['first','second','third','four'];
+		var obj = new SelectBoxes(selectId);
+		obj.initData();
+		console.dir(obj);
+	}
+</script>
+<body>
+	<div>
+		<select id="first">
+			<!--<option value ="asd">안녕</option>
+			<option>1</option>
+			<option>1</option>
+			<option>1</option>
+			<option>1</option>
+			<option>1</option>-->
+		</select>
+		<select id="second"> </select>
+		<select id="third"> </select>		
+		<select id="four"></select>		
+	</div>
+</body>
+</html>
