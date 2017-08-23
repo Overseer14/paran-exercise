@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>owwwshit so fucked</title>
+<script src="../js/jquery-3.2.1.js"></script>
+<script>
+$(function(){
+	$.fn.greenify = function(){
+		return this.each(function(index, ele){
+			$(ele).css({backgroundColor:"green"});
+		});
+	};	
+	
+	$.greenify2 = function(elements){
+		$(elements).css({backgroundColor:"yellow"});
+	}
+	$.greenify2("div.yellow");
+	$.greenify2("#header2");
+	
+	
+	$.fn.extend({
+		changeCssColor:function(){
+		return this.each(function(index, ele){
+			$(ele).css({backgroundColor:"red"});
+		});
+		}
+	});
+	$("#header").greenify().changeCssColor();
+	$("#contents").changeCssColor();
+	
+	
+});
+</script>
+<style>
+div.foo > span.bar{
+	color:red;
+	background-color:blue;
+}
+div.test{
+	background-color:red;	
+}
+div.foo > span.bar{
+	color:red;
+	background-color:blue;
+}
+</style>
+</head>
+<body>
+	<input type=button id="appendDiv" value="div추가">
+	<div id ="header">header</div>
+	<div id ="contents">contents</div>
+	<div class ="yellow">yellow</div>
+	<div class="foo">
+		<span>첫번째 div</span>
+	</div>
+
+	<div class="foo">
+		<span>두번째 div</span>
+	</div>
+</body>
+</html>
