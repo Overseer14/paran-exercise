@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.2.1.js"></script>
+<script>
+$(function(){
+		$.fn.userToggleClass = function(classAdd) {
+			return this.each(function(index, ele) {
+				if ($(ele).hasClass(classAdd)) {
+					$(ele).removeClass(classAdd);
+				}
+				else{
+					$(ele).addClass(classAdd);
+				}
+			});
+		};
+	    $("#addbutton").on("click",function(){
+	        $("div").toggleClass("activate");
+	    });
+    
+});
+</script>
+<style>
+.activate {
+	color:red;
+	background-color:blue;
+	
+div.test {
+	color:green;
+	background-color:blue;
+</style>
+</head>
+<body>
+	<input type=button id="addbutton" value="div추가">
+	<div class ="activate">header</div>
+	<div class ="button">contents</div>
+	<div id ="button">contents</div>	
+<p>this text</p>
+</body>
+</html>
